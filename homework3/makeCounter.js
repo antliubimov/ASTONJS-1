@@ -1,20 +1,20 @@
 // Function declaration
-// function makeCounter() {
-//   let count = 0;
-//   return function () {
-//     count += 1;
-//     return count;
-//   }
-// };
+function makeCounter() {
+  let count = 0;
+  return function () {
+    count += 1;
+    return count;
+  }
+};
 
 // Function expression
-// const makeCounter = function () {
-//   let count = 0;
-//   return function () {
-//     count += 1;
-//     return count;
-//   }
-// }
+const makeCounter = function () {
+  let count = 0;
+  return function () {
+    count += 1;
+    return count;
+  }
+};
 
 // Arrow function
 const makeCounter = () => {
