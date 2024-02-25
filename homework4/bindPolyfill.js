@@ -1,7 +1,12 @@
 Function.prototype.bindPolyfill = function (obj, ...args) {
-  Object.defineProperty(obj, 'fn', { value: this });
+  if (typeof this !== 'function') {
+    return;
+  }
+  const newObj = structuredClone(obj);
+
+  Object.defineProperty(newObj, 'fn', { value: this });
 
   return (...newArgs) => {
-    return obj.fn(...args, ...newArgs);
+    return newObj.fn(...args, ...newArgs);
   };
 };
